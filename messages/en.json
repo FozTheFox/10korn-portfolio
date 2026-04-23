@@ -1,0 +1,97 @@
+{
+  "Header": {
+    "title": "10Korn",
+    "home": "Home",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "skills": "Skills",
+    "contact": "Contact"
+
+  },
+  "Hero": {
+    "greeting": "Hi, I'm Sippagon 👋",
+    "role": "Full-Stack Developer",
+    "arole": "Software Engineer",
+    "description": "A passionate developer who enjoys dynamic work environments and continuous learning. Armed with practical experience, I'm eager to tackle complex systems, push my boundaries, and deliver impactful solutions. Let's build something great together!",
+    "quote": "“Take risks, Make mistakes because you'll get stronger from it.” - Mococo Abyssgard",
+    "resumeBtn": "View Resume",
+    "githubBtn": "My GitHub",
+    "dragTooltip": "Hey, you can drag me !"
+  },
+  "About":{
+    "title": "About Sippagon",
+    "description": "As a full-stack developer, I specialize in engineering scalable and high-performance applications. Drawing from my internship experience, I am adept at crafting responsive front-ends, building extensible back-ends, and architecting relational databases. I enjoy to see applications that run smoothly and are practical for real-world use and I'm always eager to learn new technologies and take on challenging projects that push my skills to the next level."
+  },
+  "Education": {
+    "title": "Education",
+    "items": {
+      "university": {
+        "degree": "Bachelor of Science in Information Technology",
+        "school": "Mahasarakham University",
+        "period": "2020 - 2025",
+        "description": "Faculty of Informatics, Department of Information Technology, provides students with a comprehensive understanding of information technology fundamentals, including programming, fundamentals of the internet and cybersecurity (Network & Security), system infrastructure (System Analyst, Software Engineering), data management (Big Data, Database Management), and applied technologies (IoT, E-commerce)."
+      }
+    }
+  },
+  "Experience": {
+    "title": "Experience",
+    "dragTooltip": "Hey, you can switch me !",
+    "items": {
+      "internship": {
+        "period": "2024 - 2025",
+        "role": "Intern Full-Stack Developer",
+        "company": "X10 IT Resource Co., Ltd.",
+        "description": "Design and build scalable, full-stack web applications lead the dual-system architecture design of relational databases and implement seamless cross-database synchronizationAnd develop the front-end of the web application for the warehouse side by adopting industry best practices, receiving guidance from senior engineers, and delivering clean, testable code. Successfully drive real-world enterprise projects through the entire software development lifecycle."
+      },
+      "universityProject": {
+        "period": "2023 - 2024",
+        "role": "Front-End Developer (Senior Project)",
+        "company": "Mahasarakham University",
+        "description": "Engineered a comprehensive service management system for automotive bodywork clients in Roi Et, Thailand under executive mentorship. Responsible for managing the administrative side of the Bodywork and Paint Management, overseeing and developing the transition of documents from paper to digital. Successfully managed the deployment of database and backend systems on university servers using VPN access for secure team collaboration. Actively engaged with real clients to iterate on requirements and resolve issues, demonstrating full-cycle software development and product ownership."
+      }
+    }
+  },
+  "Projects": {
+    "title": "Featured Projects",
+    "viewCode": "Source Code",
+    "tooltip": "View Details",
+    "items": {
+      "jobPlatform": {
+        "title": "Job Application Platform",
+        "description": "An end-to-end recruitment platform connecting job seekers and employers. Features include secure user authentication, automated resume generation, and a seamless application workflow. Built with a strong emphasis on performance, security, and delivering a production-ready user experience."
+      },
+      "posSystem": {
+        "title": "Dual-System POS & Warehouse",
+        "description": "A dual-system POS and Warehouse platform utilizing a distributed database architecture. Uniquely hosted on a custom Raspberry Pi 4 server, the system ensures real-time, cross-platform data synchronization for reliable daily operations and stock control."
+      },
+      "garageManage": {
+        "title": "Bodywork and Paint Management",
+        "description": "A complete digital transformation solution for an automotive repair center. Streamlines daily operations by digitizing documentation, tracking repair progress, and automating invoicing, ultimately optimizing resource allocation and enhancing customer satisfaction."
+      }
+    }
+  },
+  "Skills": {
+    "title": "Technical Skills",
+    "categories": {
+      "language": "Programming Languages",
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "database": "Databases",
+      "tools": "Tools and Technologies",
+      "extra": "Additional Skills"
+    }
+  },
+  "Contact": {
+    "title": "Get In Touch",
+    "description": "I'm currently looking for new opportunities as a Software Engineer or Full-Stack Developer. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+    "button": "Say Hello",
+    "social": "Or connect via social media",
+    "konamicode": "A Konami Code? Who knows what might happen..."
+  },
+  "Footer": {
+    "license": "This source code is open-source under the MIT License. Feel free to use and modify it for your own portfolio. If you have any questions or suggestions, please don't hesitate to reach out!",
+    "copyright": "10Korn.dev All rights reserved.",
+    "build": "Built with Next.js & Tailwind v4"
+  }
+}
