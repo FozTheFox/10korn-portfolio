@@ -77,21 +77,45 @@ export default function HomePage() {
       techStack: ['👤 Solo Project', 'React', 'Vite', 'Tailwind', 'GoFiber', 'Gorm', 'PostgreSQL', 'pgAdmin4', 'Docker'],
       icon: <RiTerminalBoxLine className="w-6 h-6 text-blue-500" />,
       link: 'https://github.com/FozTheFox/Skills-JobApp',
-      images: ['/projects/job1-preview.png']
+      images: ['/projects/jobapp/jobapp_1.png', '/projects/jobapp/jobapp_2.png', '/projects/jobapp/jobapp_3.png',
+               '/projects/jobapp/jobapp_4.png', '/projects/jobapp/jobapp_5.png', '/projects/jobapp/jobapp_6.png',
+               '/projects/jobapp/jobapp_7.png', '/projects/jobapp/jobapp_8.png', '/projects/jobapp/jobapp_9.png',
+               '/projects/jobapp/jobapp_10.png', '/projects/jobapp/jobapp_11.png', '/projects/jobapp/jobapp_12.png',
+               '/projects/jobapp/jobapp_13.png', '/projects/jobapp/jobapp_14.png', '/projects/jobapp/jobapp_15.png',
+               '/projects/jobapp/jobapp_16.png', '/projects/jobapp/jobapp_17.png', '/projects/jobapp/jobapp_18.png',
+               '/projects/jobapp/jobapp_19.png', '/projects/jobapp/jobapp_20.png', '/projects/jobapp/jobapp_21.png',
+               '/projects/jobapp/jobapp_22.png', '/projects/jobapp/jobapp_23.png', '/projects/jobapp/jobapp_24.png',
+      ]
     },
     {
       id: 'posSystem',
       techStack: ['🤝 Team Project', 'React', 'Node.js', 'Tailwind', 'GoFiber', 'Gorm', 'PostgreSQL', 'Raspberry Pi'],
       icon: <RiTerminalBoxLine className="w-6 h-6 text-emerald-500" />,
       link: 'https://github.com/FozTheFox/WarehouseProject',
-      images: ['/projects/job1-preview.png', '/projects/job2-preview.png', '/projects/job3-preview.png']
+      images: ['/projects/dual-system/1.jpg', '/projects/dual-system/2.jpg', '/projects/dual-system/3.jpg',
+               '/projects/dual-system/4.jpg', '/projects/dual-system/5.jpg', '/projects/dual-system/6.jpg',
+               '/projects/dual-system/7.jpg', '/projects/dual-system/8.jpg', '/projects/dual-system/9.jpg',
+               '/projects/dual-system/10.jpg', '/projects/dual-system/11.jpg', '/projects/dual-system/12.jpg',
+               '/projects/dual-system/13.jpg', '/projects/dual-system/14.jpg', '/projects/dual-system/15.jpg',
+               '/projects/dual-system/16.jpg', '/projects/dual-system/17.jpg', '/projects/dual-system/18.jpg',
+               '/projects/dual-system/19.jpg', '/projects/dual-system/20.jpg', '/projects/dual-system/21.jpg',
+               '/projects/dual-system/22.jpg', '/projects/dual-system/23.jpg', '/projects/dual-system/24.jpg',
+               '/projects/dual-system/25.jpg', '/projects/dual-system/26.jpg', '/projects/dual-system/27.jpg',
+               '/projects/dual-system/28.jpg', '/projects/dual-system/29.jpg', '/projects/dual-system/30.jpg',
+               '/projects/dual-system/31.jpg', '/projects/dual-system/32.jpg', '/projects/dual-system/33.jpg',
+               '/projects/dual-system/34.jpg', '/projects/dual-system/35.jpg',]
     },
     {
       id: 'garageManage',
       techStack: ['🤝 Team Project', 'React', 'Tailwind', 'Flutter', 'GetWidget', 'Laravel', 'MySql', 'phpMyAdmin', 'XAMPP'],
       icon: <RiTerminalBoxLine className="w-6 h-6 text-orange-500" />,
       link: 'https://github.com/FozTheFox/Senior-Project',
-      images: ['/projects/job1-preview.png', '/projects/job2-preview.png']
+      images: ['/projects/bodyNpaint/BnPM1-preview.png', '/projects/bodyNpaint/BnPM2-preview.png', '/projects/bodyNpaint/BnPM3-preview.png',
+               '/projects/bodyNpaint/BnPM4-preview.png', '/projects/bodyNpaint/BnPM5-preview.png', '/projects/bodyNpaint/BnPM6-preview.png',
+               '/projects/bodyNpaint/BnPM7-preview.png', '/projects/bodyNpaint/BnPM8-preview.png', '/projects/bodyNpaint/BnPM9-preview.png',
+               '/projects/bodyNpaint/BnPM10-preview.png', '/projects/bodyNpaint/BnPM11-preview.png', '/projects/bodyNpaint/BnPM12-preview.png',
+               '/projects/bodyNpaint/BnPM13-preview.png', '/projects/bodyNpaint/BnPM14-preview.png', '/projects/bodyNpaint/BnPM15-preview.png'
+              ]
     }
   ];
 

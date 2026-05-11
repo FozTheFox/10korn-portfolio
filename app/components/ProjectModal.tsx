@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+// 1. เพิ่ม useRef เข้ามาใน import
+import { useState, useEffect, useRef } from 'react'
 import Modal from './Modal'
 import { useTranslations } from 'next-intl'
 
 interface Project {
   id: string;
-  images: string[]; // เปลี่ยนให้รับเป็น Array ของ string
+  images: string[];
   techStack: string[];
 }
 
@@ -18,13 +19,35 @@ interface ProjectModalProps {
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const t = useTranslations('Projects');
   
-  // สร้าง State เพื่อเก็บว่าตอนนี้โชว์รูปที่เท่าไหร่ (เริ่มต้นที่รูปแรก คือ index 0)
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // 2. สร้าง Ref สำหรับจับกล่อง Thumbnail
+  const thumbnailContainerRef = useRef<HTMLDivElement>(null);
 
-  // สำคัญ: รีเซ็ตกลับไปรูปแรกเสมอเวลาเปิด Popup โปรเจกต์ใหม่
   useEffect(() => {
     if (project) setCurrentImageIndex(0);
   }, [project]);
+
+  // 🎯 3. เพิ่ม useEffect เพื่อแปลงการเลื่อนแนวตั้ง (Y) เป็นแนวนอน (X)
+  useEffect(() => {
+    const container = thumbnailContainerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      // ตรวจสอบว่าถ้ามีการเลื่อนลูกกลิ้งเมาส์
+      if (e.deltaY !== 0) {
+        e.preventDefault(); // 🛑 หยุดไม่ให้หน้า Modal หลักเลื่อนลง
+        container.scrollLeft += e.deltaY; // 👉 สั่งให้กล่อง Thumbnail เลื่อนไปด้านข้างแทน
+      }
+    };
+
+    // ต้องใช้ { passive: false } เพื่อให้ e.preventDefault() ทำงานได้ในเบราว์เซอร์ยุคใหม่
+    container.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+    };
+  }, [project]); // ให้ทำงานใหม่ทุกครั้งที่เปลี่ยนโปรเจกต์
 
   if (!project) return null;
 
@@ -42,7 +65,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className="flex flex-col gap-3">
           
           <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 shadow-inner flex items-center justify-center">
-            {/* 🛡️ เช็กว่ามีรูปภาพใน Array หรือไม่ */}
             {projectImages.length > 0 ? (
               <img 
                 src={projectImages[currentImageIndex]} 
@@ -50,16 +72,18 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 className="w-full h-full object-cover transition-opacity duration-300"
               />
             ) : (
-              // 🛡️ ถ้าไม่มีรูปภาพ ให้แสดงข้อความนี้แทนเว็บพัง
               <span className="text-slate-400 dark:text-slate-500 font-medium">
                 No image available
               </span>
             )}
           </div>
 
-          {/* ... ส่วน Thumbnail (เปลี่ยน project.images เป็น projectImages ให้หมด) ... */}
+          {/* 🎯 4. ใส่ ref ให้กับกล่อง Thumbnail */}
           {projectImages.length > 1 && (
-            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600">
+            <div 
+              ref={thumbnailContainerRef}
+              className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600 custom-scrollbar"
+            >
               {projectImages.map((img, index) => (
                 <button
                   key={index}
@@ -67,8 +91,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   className={`
                     shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-all duration-200
                     ${currentImageIndex === index 
-                      ? 'border-blue-500 opacity-100 scale-105 shadow-md' // รูปที่เลือกอยู่
-                      : 'border-transparent opacity-50 hover:opacity-100 hover:scale-105' // รูปอื่นๆ
+                      ? 'border-blue-500 opacity-100 scale-105 shadow-md' 
+                      : 'border-transparent opacity-50 hover:opacity-100 hover:scale-105 cursor-pointer'
                     }
                   `}
                 >
